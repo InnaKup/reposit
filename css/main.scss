@@ -5,6 +5,9 @@ $baseFontSize: 18px;
 $blue: #61c4d9;
 $darkGreen: #0b4d3c;
 
+//z-indexes
+$z-fixed-menu: 100;
+
 //normalize
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
 
@@ -13,7 +16,6 @@ $darkGreen: #0b4d3c;
 @import "layout";
 
 //components
-@import "/css/layout.scss";
 @import "components/hero.scss";
 @import "components/header.scss";
 @import "components/features.scss";
@@ -26,3 +28,6 @@ $darkGreen: #0b4d3c;
 @import "components/benefits-section.scss";
 @import "components/reviews.scss";
 @import "components/interactive-avatar.scss";
+@import "components/form.scss";
+@import "components/radio.scss";
+@import "components/fixed-menu.scss";

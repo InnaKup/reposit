@@ -18,7 +18,7 @@ body {
 .wrapper {
   position: relative;
   width: 100%;
-  min-width: containerWidth + 20px;
+  min-width: 960px;
   min-height: 100%;
   overflow: hidden;
 }
@@ -26,7 +26,6 @@ body {
 .container {
   width: containerWidth;
   margin: 0 auto;
-  position: relative;
 }
 
 h1,
@@ -72,7 +71,6 @@ a {
 img {
   display: block;
   max-width: 100%;
-  max-height: 100%;
 }
 
 .hero {
@@ -177,14 +175,23 @@ img {
   border-radius: 100px;
   line-height: 1;
   text-decoration: none;
+  border: none;
 }
 .btn--theme--white {
-  background: #ffffff;
-  color: #0b4d3c;
-}
-.btn--theme--white:hover {
-  color: #ffffff;
   background: #0b4d3c;
+  color: #ffffff;
+}
+.btn--theme--white :hover {
+  color: #0b4d3c;
+  background: #ffffff;
+}
+.btn--theme--transparent {
+  background: transparent;
+  color: #000000;
+  text-decoration: none;
+}
+.btn--theme--transparent :hover {
+  color: #0b4d3c;
 }
 
 .section {
@@ -193,6 +200,9 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.section --font-color--green {
+  color: #0b4d3c;
 }
 
 .section__title {
@@ -258,6 +268,234 @@ img {
 .benefit__icon {
   width: 75px;
   height: 69px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.benefits-section {
+  position: relative;
+  background: url() left top 57% no-repeat;
+}
+.benefits-section ::before {
+  content: url();
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+}
+
+.reviews__display {
+  background: #f8faf9 url() right top no-repeat;
+  padding: 50px 45px 34px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.reviews__display:before {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -65px;
+}
+
+.reviews__display-inner {
+  display: flex;
+}
+
+.reviews__avatar {
+  width: 254px;
+  height: 260px;
+}
+
+.reviews__avatar-img {
+  object-fit: cover;
+  width: 254px;
+  height: 260px;
+}
+
+.reviews__content {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.reviews__title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 22px;
+  color: black;
+}
+
+.reviews__text {
+  margin-bottom: 36px;
+}
+
+.reviews__author {
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+}
+
+.reviews__switcher {
+  display: flex;
+  justify-content: center;
+}
+
+.reviews__switcher-item {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 4px solid transparent;
+}
+
+.ineractive-avatar {
+  width: 80px;
+  height: 80px;
+  border: 6px solid #0f5a47;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.ineractive-avatar__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ineractive-avatar__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.form {
+  display: flex;
+}
+
+.form__col {
+  flex: 1;
+  margin-right: 20px;
+}
+.form__col :last-child {
+  margin-right: 0;
+}
+
+.form__row {
+  display: flex;
+  margin-bottom: 18px;
+}
+
+.form__block {
+  flex: 1;
+  margin-right: 20px;
+}
+.form__block :last-child {
+  margin-right: 0;
+}
+
+.form__input {
+  width: 100%;
+  border: none;
+  padding: 18px 11px;
+  border: solid 3px transparent;
+}
+.form__input --textarea {
+  height: 180px;
+  resize: none;
+}
+.form__input :focus {
+  border-color: #dee2bd;
+}
+
+.form__controls {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.radio {
+  display: flex;
+  cursor: pointer;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.radio --checkbox .radio__visible {
+  border-radius: 0;
+}
+.radio --checkbox .radio__visible ::before {
+  background: url(/img/icons/checkmark.svg);
+}
+
+.radio__elem {
+  display: none;
+}
+.radio__elem :checked ~ .radio__visible ::before {
+  display: block;
+}
+
+.radio__visible {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.radio__visible :before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #365a49;
+  border-radius: 50%;
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fixed-menu {
+  position: fixed;
+  top: 20%;
+  right: 3%;
+  z-index: 100;
+}
+
+.fixed-menu__item {
+  margin-bottom: 5px;
+}
+.fixed-menu__item--active .fixed-menu__link {
+  border-color: #ffffff;
+}
+
+.fixed-menu__link {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  display: block;
+  position: relative;
+}
+.fixed-menu__link ::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
   position: absolute;
   top: 50%;
   left: 50%;
